@@ -17,7 +17,6 @@ namespace ConsoleApp2
             int age = Convert.ToInt32(Console.ReadLine());
 
             bool even;
-            //Handles even/odd distinction
             if (age % 2 == 0)
             {
                 even = true;
@@ -57,14 +56,29 @@ namespace ConsoleApp2
             int siblingCount = Convert.ToInt32(Console.ReadLine());
 
             string location;
-            if(siblingCount == 0)
+            if (siblingCount == 0)
             {
-                
+                location = "Naples";
+            }else if (siblingCount == 1)
+            {
+                location = "Venice";
+            }else if (siblingCount == 2)
+            {
+                location = "Rome";
+            }else if (siblingCount == 3)
+            {
+                location = "Florence";
+            }else if (siblingCount >=4)
+            {
+                location = "Genoa";
+            }else
+            {
+                location = "Siberia";
             }
 
 
             Console.WriteLine($"{firstName} {lastName} will retire in {numberOfYears} with {bankBalance} in the bank,\n" +
-                $"a vacation home in {{location}}, and travel by {{modeOfTransportation}}");
+                $"a vacation home in {location}, and travel by {{modeOfTransportation}}");
             
         }
     }
