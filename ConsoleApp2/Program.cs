@@ -10,10 +10,10 @@ namespace ConsoleApp2
             Console.WriteLine("Hello. What is your first name?\n");
             string firstName = Console.ReadLine();
 
-            Console.WriteLine("And your last name?\n");
+            Console.WriteLine("\nAnd your last name?\n");
             string lastName = Console.ReadLine();
 
-            Console.WriteLine($"How old are you, {firstName} {lastName}?\n");
+            Console.WriteLine($"\nHow old are you, {firstName} {lastName}?\n");
             int age = Convert.ToInt32(Console.ReadLine());
 
             bool even;
@@ -31,7 +31,7 @@ namespace ConsoleApp2
                 numberOfYears = "50 years";
             }
 
-            Console.WriteLine("And in what month of the year were you born? (e.g. March = 3)");
+            Console.WriteLine("\nAnd in what month of the year were you born? (e.g. March = 3)\n");
             int month = Convert.ToInt32(Console.ReadLine());
 
             string bankBalance;
@@ -49,36 +49,80 @@ namespace ConsoleApp2
             }
 
 
-            Console.WriteLine("What is your favorite color? ROYGBIV only, please. type \"help\" if you're confused.");
-            string color = (Console.ReadLine());
+            Console.WriteLine("\nWhat is your favorite color? ROYGBIV only, please.\ntype \"help\" if you're confused.\n");
+            string color = Console.ReadLine();
+            color = color.ToLower();
 
-            Console.WriteLine("And finally, how many siblings do you have?");
+            string modeOfTransportation = "";
+
+            while (color == "help" || color != "red" ^ color != "orange" ^ color != "yellow" ^ color != "green" ^ 
+                   color != "blue" ^ color != "indigo" ^ color != "violet")
+            {
+                Console.WriteLine("\nROYGBIV means red, orange, yellow, green, blue, indigo, or violet.\n" +
+                    "So, what is your favorite color?\n");
+                color = Console.ReadLine();
+                if (color == "red")
+                {
+                    modeOfTransportation = "camel";
+                }
+                else if (color == "orange")
+                {
+                    modeOfTransportation = "horseback";
+                }
+                else if (color == "yellow")
+                {
+                    modeOfTransportation = "chariot";
+                }
+                else if (color == "green")
+                {
+                    modeOfTransportation = "sailboat";
+                }
+                else if (color == "blue")
+                {
+                    modeOfTransportation = "flying carpet";
+                }
+                else if (color == "indigo")
+                {
+                    modeOfTransportation = "hot air balloon";
+                }
+                else if (color == "violet")
+                {
+                    modeOfTransportation = "foot";
+                }
+            }
+
+
+            Console.WriteLine("\nAnd finally, how many siblings do you have?\n");
             int siblingCount = Convert.ToInt32(Console.ReadLine());
 
             string location;
             if (siblingCount == 0)
             {
                 location = "Naples";
-            }else if (siblingCount == 1)
+            }
+            else if (siblingCount == 1)
             {
                 location = "Venice";
-            }else if (siblingCount == 2)
+            }
+            else if (siblingCount == 2)
             {
                 location = "Rome";
-            }else if (siblingCount == 3)
+            }
+            else if (siblingCount == 3)
             {
                 location = "Florence";
-            }else if (siblingCount >=4)
+            }
+            else if (siblingCount >=4)
             {
                 location = "Genoa";
-            }else
+            }
+            else
             {
                 location = "Siberia";
             }
 
-
-            Console.WriteLine($"{firstName} {lastName} will retire in {numberOfYears} with {bankBalance} in the bank,\n" +
-                $"a vacation home in {location}, and travel by {{modeOfTransportation}}");
+            Console.WriteLine($"\n{firstName} {lastName} will retire in {numberOfYears} with {bankBalance} in the bank,\n" +
+                $"a vacation home in {location}, and travel by {modeOfTransportation}.");
             
         }
     }
