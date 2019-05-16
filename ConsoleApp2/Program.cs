@@ -41,17 +41,12 @@ namespace ConsoleApp2
                 bankBalance = "-$1,000,000,000";
             }
 
-
-            Console.WriteLine("\nWhat is your favorite color? ROYGBIV only, please.\nType \"help\" if you're confused.\n");
-            string color = Console.ReadLine();
-            color = color.ToLower();
-
+            string color = "";
             string modeOfTransportation = "";
 
             do
             {
-                Console.WriteLine("\nROYGBIV means red, orange, yellow, green, blue, indigo, or violet.\n" +
-                                  "So, what is your favorite color?\n");
+                Console.WriteLine("\nWhat is your favorite color? ROYGBIV only, please.\nType \"help\" if you're confused.\n");
                 color = Console.ReadLine().ToLower();
 
                 switch (color)
@@ -78,8 +73,7 @@ namespace ConsoleApp2
                         modeOfTransportation = "foot";
                         break;
                     case "help":
-                        Console.WriteLine("\nROYGBIV means red, orange, yellow, green, blue, indigo, or violet.\n" +
-                                          "So, what is your favorite color?\n");
+                        Console.WriteLine("\nROYGBIV means red, orange, yellow, green, blue, indigo, or violet.\n");
                         break;
                     default:
                         Console.WriteLine("\nI'm sorry, I don't understand that.");
