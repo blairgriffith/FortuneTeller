@@ -16,22 +16,15 @@ namespace ConsoleApp2
             Console.WriteLine($"\nHow old are you, {firstName} {lastName}?\n");
             int age = Convert.ToInt32(Console.ReadLine());
 
-            bool even;
-            if (age % 2 == 0)
-            {
-                even = true;
-            }else{
-                even = false;
-            }
             string numberOfYears;
-            if (even == true)
+            if (age % 2 == 0)
             {
                 numberOfYears = "22 years";
             }else{
                 numberOfYears = "50 years";
             }
 
-            Console.WriteLine("\nAnd in what month of the year were you born? (e.g. March = 3)\n");
+            Console.WriteLine($"\nAnd in what month of the year were you born, {firstName}? (e.g. March = 3)\n");
             int month = Convert.ToInt32(Console.ReadLine());
 
             string bankBalance;
