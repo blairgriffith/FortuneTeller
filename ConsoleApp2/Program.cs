@@ -55,42 +55,45 @@ namespace ConsoleApp2
 
             string modeOfTransportation = "";
 
-            while (color == "help" || color != "red" ^ color != "orange" ^ color != "yellow" ^ color != "green" ^ 
-                   color != "blue" ^ color != "indigo" ^ color != "violet")
+            do
             {
                 Console.WriteLine("\nROYGBIV means red, orange, yellow, green, blue, indigo, or violet.\n" +
-                    "So, what is your favorite color?\n");
-                color = Console.ReadLine();
-                color.ToLower();
-                if (color == "red")
+                                  "So, what is your favorite color?\n");
+                color = Console.ReadLine().ToLower();
+
+                switch (color)
                 {
-                    modeOfTransportation = "camel";
+                    case "red":
+                        modeOfTransportation = "camel";
+                        break;
+                    case "orange":
+                        modeOfTransportation = "horseback";
+                        break;
+                    case "yellow":
+                        modeOfTransportation = "chariot";
+                        break;
+                    case "green":
+                        modeOfTransportation = "sailboat";
+                        break;
+                    case "blue":
+                        modeOfTransportation = "flying carpet";
+                        break;
+                    case "indigo":
+                        modeOfTransportation = "hot air balloon";
+                        break;
+                    case "violet":
+                        modeOfTransportation = "foot";
+                        break;
+                    case "help":
+                        Console.WriteLine("\nROYGBIV means red, orange, yellow, green, blue, indigo, or violet.\n" +
+                                          "So, what is your favorite color?\n");
+                        break;
+                    default:
+                        Console.WriteLine("\nI'm sorry, I don't understand that.");
+                        color = "help";
+                        break;
                 }
-                else if (color == "orange")
-                {
-                    modeOfTransportation = "horseback";
-                }
-                else if (color == "yellow")
-                {
-                    modeOfTransportation = "chariot";
-                }
-                else if (color == "green")
-                {
-                    modeOfTransportation = "sailboat";
-                }
-                else if (color == "blue")
-                {
-                    modeOfTransportation = "flying carpet";
-                }
-                else if (color == "indigo")
-                {
-                    modeOfTransportation = "hot air balloon";
-                }
-                else if (color == "violet")
-                {
-                    modeOfTransportation = "foot";
-                }
-            }
+            } while (color == "help");
 
 
             Console.WriteLine("\nAnd finally, how many siblings do you have?\n");
