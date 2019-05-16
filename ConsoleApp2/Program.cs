@@ -49,7 +49,7 @@ namespace ConsoleApp2
             }
 
 
-            Console.WriteLine("\nWhat is your favorite color? ROYGBIV only, please.\ntype \"help\" if you're confused.\n");
+            Console.WriteLine("\nWhat is your favorite color? ROYGBIV only, please.\nType \"help\" if you're confused.\n");
             string color = Console.ReadLine();
             color = color.ToLower();
 
@@ -61,6 +61,7 @@ namespace ConsoleApp2
                 Console.WriteLine("\nROYGBIV means red, orange, yellow, green, blue, indigo, or violet.\n" +
                     "So, what is your favorite color?\n");
                 color = Console.ReadLine();
+                color.ToLower();
                 if (color == "red")
                 {
                     modeOfTransportation = "camel";
